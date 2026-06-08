@@ -165,11 +165,18 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-between px-6 py-8 md:px-10 lg:px-16">
-          <header className="flex items-center justify-between">
-            <div>
+          <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div className="flex items-center justify-between gap-4">
               <p className="text-sm uppercase tracking-[0.35em] text-white/70">
                 Diana Tsymbaliuk
               </p>
+              <button
+                type="button"
+                onClick={() => setLanguage((current) => (current === 'EN' ? 'DE' : 'EN'))}
+                className="rounded-full border border-white/20 px-3 py-1 text-sm text-white md:hidden"
+              >
+                {language}
+              </button>
             </div>
             <nav className="hidden gap-8 text-sm text-white/80 md:flex">
               <a href="#about" className="hover:text-white">{copy.navAbout}</a>
@@ -183,6 +190,20 @@ export default function Home() {
               >
                 {language}
               </button>
+            </nav>
+            <nav className="flex flex-wrap gap-3 text-sm text-white/80 md:hidden">
+              <a href="#about" className="rounded-full border border-white/15 px-3 py-2 hover:text-white">
+                {copy.navAbout}
+              </a>
+              <a href="#projects" className="rounded-full border border-white/15 px-3 py-2 hover:text-white">
+                {copy.navProjects}
+              </a>
+              <a href="#skills" className="rounded-full border border-white/15 px-3 py-2 hover:text-white">
+                {copy.navProcess}
+              </a>
+              <a href="#contact" className="rounded-full border border-white/15 px-3 py-2 hover:text-white">
+                {copy.navContact}
+              </a>
             </nav>
           </header>
 
