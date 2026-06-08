@@ -64,42 +64,42 @@ const translations = {
     writeToMe: 'Write to me',
   },
   DE: {
-    navAbout: 'Ueber mich',
+    navAbout: 'Über mich',
     navProjects: 'Projekte',
     navProcess: 'Prozess',
     navContact: 'Kontakt',
     eyebrow: 'FRONTEND DEVELOPER • UI ENGINEER • BERLIN',
-    heroTitle: 'Frontend Developerin fuer hochwertige Web Interfaces.',
+    heroTitle: 'Frontend Developerin für hochwertige Web Interfaces.',
     heroText:
-      'Ich entwickle responsive, moderne Interfaces mit React, Next.js, TypeScript und motion-fokussierter UI. Ich lebe in Berlin und bin offen fuer Frontend- und UI-Engineer-Rollen.',
+      'Ich entwickle responsive, moderne Interfaces mit React, Next.js, TypeScript und motion-fokussierter UI. Ich lebe in Berlin und bin offen für Frontend- und UI-Engineer-Rollen.',
     viewProjects: 'Projekte ansehen',
     focus: 'Fokus',
     focusStack: 'React / Next.js, TypeScript, responsive UI, Performance',
-    focusUi: 'klare Layouts, Animationen, zugaengliche Komponenten',
-    focusBerlin: 'offen fuer Frontend-Rollen, Freelance und Vollzeit',
-    aboutLabel: 'Ueber mich',
-    aboutTitle: 'Frontend Developerin mit starkem Blick fuer UI Details.',
+    focusUi: 'klare Layouts, Animationen, zugängliche Komponenten',
+    focusBerlin: 'offen für Frontend-Rollen, Freelance und Vollzeit',
+    aboutLabel: 'Über mich',
+    aboutTitle: 'Frontend Developerin mit starkem Blick für UI Details.',
     aboutTextOne:
-      'Ich entwickle responsive, moderne Interfaces mit React, Next.js, TypeScript und motion-fokussierter UI. Ich lebe in Berlin und bin offen fuer Frontend- und UI-Engineer-Rollen.',
+      'Ich entwickle responsive, moderne Interfaces mit React, Next.js, TypeScript und motion-fokussierter UI. Ich lebe in Berlin und bin offen für Frontend- und UI-Engineer-Rollen.',
     aboutTextTwo:
-      'Ich erstelle responsive, zugaengliche und visuell praezise Interfaces mit React, Next.js und TypeScript. Mein Fokus liegt auf sauberer Komponentenstruktur, smoothen Interaktionen, Performance und Layouts, die auf Desktop und Mobile stark wirken.',
+      'Ich erstelle responsive, zugängliche und visuell präzise Interfaces mit React, Next.js und TypeScript. Mein Fokus liegt auf sauberer Komponentenstruktur, smoothen Interaktionen, Performance und Layouts, die auf Desktop und Mobile stark wirken.',
     skillsLabel: 'Skills',
     features: [
       {
         title: 'Clean UI',
-        text: 'Durchdachte Layouts, klare Hierarchie und sorgfaeltige visuelle Details.',
+        text: 'Durchdachte Layouts, klare Hierarchie und sorgfältige visuelle Details.',
       },
       {
         title: 'Responsive',
-        text: 'Responsive Design fuer Mobile, Tablet und Desktop ohne Kompromisse.',
+        text: 'Responsive Design für Mobile, Tablet und Desktop ohne Kompromisse.',
       },
       {
         title: 'Performance',
-        text: 'Optimiertes Laden, fluessige Animationen und hohe Geschwindigkeit.',
+        text: 'Optimiertes Laden, flüssige Animationen und hohe Geschwindigkeit.',
       },
     ],
     projectsLabel: 'Projekte',
-    selectedWork: 'Ausgewaehlte Arbeiten',
+    selectedWork: 'Ausgewählte Arbeiten',
     projectsIntro:
       'Eine Auswahl an Frontend-Projekten mit Fokus auf responsive UI, saubere Komponentenstruktur, Performance und gute User Experience.',
     projects: [
@@ -113,14 +113,14 @@ const translations = {
       },
       {
         title: 'Brand Website',
-        text: 'Landingpage mit Atmosphaere, starker Typografie und Content, der verkauft.',
+        text: 'Landingpage mit Atmosphäre, starker Typografie und Content, der verkauft.',
       },
     ],
-    openCase: 'Case oeffnen',
+    openCase: 'Case öffnen',
     contactLabel: 'Kontakt',
-    contactTitle: 'Lass uns etwas Nuetzliches bauen.',
+    contactTitle: 'Lass uns etwas Nützliches bauen.',
     contactText:
-      'Ich bin offen fuer Frontend Developer, UI Engineer und Freelance Opportunities in Berlin oder remote.',
+      'Ich bin offen für Frontend Developer, UI Engineer und Freelance Opportunities in Berlin oder remote.',
     writeToMe: 'Schreib mir',
   },
 }
