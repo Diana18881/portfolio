@@ -1,39 +1,146 @@
 'use client'
 
+import { useState } from 'react'
+
+const translations = {
+  EN: {
+    navAbout: 'About',
+    navProjects: 'Projects',
+    navProcess: 'Process',
+    navContact: 'Contact',
+    eyebrow: 'FRONTEND DEVELOPER • UI ENGINEER • BERLIN',
+    heroTitle: 'Frontend Developer building polished web interfaces.',
+    heroText:
+      'I build responsive, modern interfaces with React, Next.js, TypeScript and motion-focused UI. Based in Berlin and open to frontend / UI engineer roles.',
+    viewProjects: 'View projects',
+    focus: 'Focus',
+    focusStack: 'React / Next.js, TypeScript, responsive UI, performance',
+    focusUi: 'clean layouts, animations, accessible components',
+    focusBerlin: 'open to frontend roles, freelance and full-time',
+    aboutLabel: 'About',
+    aboutTitle: 'Frontend developer with a strong eye for UI details.',
+    aboutTextOne:
+      'I build responsive, modern interfaces with React, Next.js, TypeScript and motion-focused UI. Based in Berlin and open to frontend / UI engineer roles.',
+    aboutTextTwo:
+      'I create responsive, accessible and visually polished interfaces with React, Next.js and TypeScript. My focus is clean component structure, smooth interactions, performance and layouts that feel sharp on both desktop and mobile.',
+    skillsLabel: 'Skills',
+    features: [
+      {
+        title: 'Clean UI',
+        text: 'Thoughtful layouts, clear hierarchy and careful visual details.',
+      },
+      {
+        title: 'Responsive',
+        text: 'Responsive design for mobile, tablet and desktop without compromises.',
+      },
+      {
+        title: 'Performance',
+        text: 'Optimized loading, smooth animations and high performance.',
+      },
+    ],
+    projectsLabel: 'Projects',
+    selectedWork: 'Selected Work',
+    projectsIntro:
+      'A selection of frontend projects focused on responsive UI, clean component structure, performance and smooth user experience.',
+    projects: [
+      {
+        title: 'E-commerce Platform',
+        text: 'Product catalog, cart flow, filters and responsive shopping experience built with modern frontend patterns.',
+      },
+      {
+        title: 'Dashboard System',
+        text: 'Component-based approach, charts, tables and user-friendly scenarios.',
+      },
+      {
+        title: 'Brand Website',
+        text: 'Landing page with atmosphere, strong typography and content that sells.',
+      },
+    ],
+    openCase: 'Open case',
+    contactLabel: 'Contact',
+    contactTitle: 'Let’s build something useful together.',
+    contactText:
+      'I’m open to frontend developer, UI engineer and freelance opportunities in Berlin and remote.',
+    writeToMe: 'Write to me',
+  },
+  DE: {
+    navAbout: 'Ueber mich',
+    navProjects: 'Projekte',
+    navProcess: 'Prozess',
+    navContact: 'Kontakt',
+    eyebrow: 'FRONTEND DEVELOPER • UI ENGINEER • BERLIN',
+    heroTitle: 'Frontend Developerin fuer hochwertige Web Interfaces.',
+    heroText:
+      'Ich entwickle responsive, moderne Interfaces mit React, Next.js, TypeScript und motion-fokussierter UI. Ich lebe in Berlin und bin offen fuer Frontend- und UI-Engineer-Rollen.',
+    viewProjects: 'Projekte ansehen',
+    focus: 'Fokus',
+    focusStack: 'React / Next.js, TypeScript, responsive UI, Performance',
+    focusUi: 'klare Layouts, Animationen, zugaengliche Komponenten',
+    focusBerlin: 'offen fuer Frontend-Rollen, Freelance und Vollzeit',
+    aboutLabel: 'Ueber mich',
+    aboutTitle: 'Frontend Developerin mit starkem Blick fuer UI Details.',
+    aboutTextOne:
+      'Ich entwickle responsive, moderne Interfaces mit React, Next.js, TypeScript und motion-fokussierter UI. Ich lebe in Berlin und bin offen fuer Frontend- und UI-Engineer-Rollen.',
+    aboutTextTwo:
+      'Ich erstelle responsive, zugaengliche und visuell praezise Interfaces mit React, Next.js und TypeScript. Mein Fokus liegt auf sauberer Komponentenstruktur, smoothen Interaktionen, Performance und Layouts, die auf Desktop und Mobile stark wirken.',
+    skillsLabel: 'Skills',
+    features: [
+      {
+        title: 'Clean UI',
+        text: 'Durchdachte Layouts, klare Hierarchie und sorgfaeltige visuelle Details.',
+      },
+      {
+        title: 'Responsive',
+        text: 'Responsive Design fuer Mobile, Tablet und Desktop ohne Kompromisse.',
+      },
+      {
+        title: 'Performance',
+        text: 'Optimiertes Laden, fluessige Animationen und hohe Geschwindigkeit.',
+      },
+    ],
+    projectsLabel: 'Projekte',
+    selectedWork: 'Ausgewaehlte Arbeiten',
+    projectsIntro:
+      'Eine Auswahl an Frontend-Projekten mit Fokus auf responsive UI, saubere Komponentenstruktur, Performance und gute User Experience.',
+    projects: [
+      {
+        title: 'E-Commerce Plattform',
+        text: 'Produktkatalog, Warenkorb, Filter und responsive Shopping Experience mit modernen Frontend-Patterns.',
+      },
+      {
+        title: 'Dashboard System',
+        text: 'Komponentenbasierter Ansatz mit Charts, Tabellen und nutzerfreundlichen Szenarien.',
+      },
+      {
+        title: 'Brand Website',
+        text: 'Landingpage mit Atmosphaere, starker Typografie und Content, der verkauft.',
+      },
+    ],
+    openCase: 'Case oeffnen',
+    contactLabel: 'Kontakt',
+    contactTitle: 'Lass uns etwas Nuetzliches bauen.',
+    contactText:
+      'Ich bin offen fuer Frontend Developer, UI Engineer und Freelance Opportunities in Berlin oder remote.',
+    writeToMe: 'Schreib mir',
+  },
+}
+
 export default function Home() {
-  const features = [
-    {
-      title: 'Clean UI',
-      text: 'Thoughtful layouts, clear hierarchy and careful visual details.',
-    },
-    {
-      title: 'Responsive',
-      text: 'Responsive design for mobile, tablet and desktop without compromises.',
-    },
-    {
-      title: 'Performance',
-      text: 'Optimized loading, smooth animations and high performance.',
-    },
-  ]
+  const [language, setLanguage] = useState<'EN' | 'DE'>('EN')
+  const copy = translations[language]
 
   const projects = [
     {
-      title: 'E-commerce Platform',
-      text: 'Product catalog, cart flow, filters and responsive shopping experience built with modern frontend patterns.',
       href: '/ecommerce',
       image:
         'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200&auto=format&fit=crop',
     },
     {
-      title: 'Dashboard System',
-      text: 'Component-based approach, charts, tables and user-friendly scenarios.',
       href: '/dashboard',
       image:
         'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
     },
     {
-      title: 'Brand Website',
-      text: 'Landing page with atmosphere, strong typography and content that sells.',
       href: '/brand',
       image:
         'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop',
@@ -65,59 +172,60 @@ export default function Home() {
               </p>
             </div>
             <nav className="hidden gap-8 text-sm text-white/80 md:flex">
-              <a href="#about" className="hover:text-white">About</a>
-              <a href="#projects" className="hover:text-white">Projects</a>
-              <a href="#process" className="hover:text-white">Process</a>
-              <a href="#contact" className="hover:text-white">Contact</a>
+              <a href="#about" className="hover:text-white">{copy.navAbout}</a>
+              <a href="#projects" className="hover:text-white">{copy.navProjects}</a>
+              <a href="#skills" className="hover:text-white">{copy.navProcess}</a>
+              <a href="#contact" className="hover:text-white">{copy.navContact}</a>
+              <button
+                type="button"
+                onClick={() => setLanguage((current) => (current === 'EN' ? 'DE' : 'EN'))}
+                className="rounded-full border border-white/20 px-3 py-1 text-white"
+              >
+                {language}
+              </button>
             </nav>
           </header>
 
           <div className="grid items-end gap-10 py-20 lg:grid-cols-[1.4fr_0.6fr] lg:py-28">
             <div>
               <p className="mb-4 text-sm uppercase tracking-[0.35em] text-[#d4af37]">
-                FRONTEND DEVELOPER • UI ENGINEER • BERLIN
+                {copy.eyebrow}
               </p>
               <h1 className="max-w-4xl text-5xl font-semibold leading-tight md:text-7xl">
-                Frontend Developer
-building polished web interfaces.
-                <span className="block text-white/70">
-                  
-                </span>
+                {copy.heroTitle}
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/75 md:text-lg">
-                I build responsive, modern interfaces with React, Next.js, TypeScript and motion-focused UI. Based in Berlin and open to frontend / UI engineer roles.
+                {copy.heroText}
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href="#projects"
                   className="rounded-full bg-[#d4af37] px-6 py-3 text-sm font-medium text-black transition hover:scale-[1.02]"
                 >
-                  View projects
+                  {copy.viewProjects}
                 </a>
               </div>
             </div>
 
             <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-md">
-              <p className="text-sm uppercase tracking-[0.35em] text-white/55">Focus</p>
+              <p className="text-sm uppercase tracking-[0.35em] text-white/55">{copy.focus}</p>
               <div className="mt-6 space-y-6">
                 <div>
                   <p className="text-4xl font-semibold">3+</p>
                   <p className="mt-2 text-white/70">
-                    React / Next.js
-TypeScript, responsive UI, performance
-
+                    {copy.focusStack}
                   </p>
                 </div>
                 <div>
                   <p className="text-4xl font-semibold">UI</p>
                   <p className="mt-2 text-white/70">
-                    clean layouts, animations, accessible components
+                    {copy.focusUi}
                   </p>
                 </div>
                 <div>
                   <p className="text-4xl font-semibold">Berlin</p>
                   <p className="mt-2 text-white/70">
-                    open to frontend roles, freelance and full-time
+                    {copy.focusBerlin}
                   </p>
                 </div>
               </div>
@@ -129,21 +237,17 @@ TypeScript, responsive UI, performance
       <section id="about" className="mx-auto max-w-7xl px-6 py-20 md:px-10 lg:px-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-[#d4af37]">About</p>
+            <p className="text-sm uppercase tracking-[0.35em] text-[#d4af37]">{copy.aboutLabel}</p>
             <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-              Frontend developer
-with a strong eye
-for UI details.
+              {copy.aboutTitle}
             </h2>
           </div>
           <div className="space-y-5 leading-7 text-white/75">
             <p>
-              I build responsive, modern interfaces with React, Next.js, TypeScript and motion-focused UI. Based in Berlin and open to frontend / UI engineer roles.
+              {copy.aboutTextOne}
             </p>
             <p>
-             I create responsive, accessible and visually polished interfaces with React, Next.js and TypeScript.
-
-My focus is clean component structure, smooth interactions, performance and layouts that feel sharp on both desktop and mobile.
+              {copy.aboutTextTwo}
             </p>
           </div>
         </div>
@@ -151,9 +255,9 @@ My focus is clean component structure, smooth interactions, performance and layo
 
       <section id="skills" className="border-y border-white/10 bg-white/[0.03]">
         <div className="mx-auto max-w-7xl px-6 py-20 md:px-10 lg:px-16">
-          <p className="text-sm uppercase tracking-[0.35em] text-[#d4af37]">Skills</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-[#d4af37]">{copy.skillsLabel}</p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {features.map((item) => (
+            {copy.features.map((item) => (
               <div
                 key={item.title}
                 className="rounded-[2rem] border border-white/10 bg-black/30 p-8"
@@ -169,32 +273,32 @@ My focus is clean component structure, smooth interactions, performance and layo
       <section id="projects" className="mx-auto max-w-7xl px-6 py-20 md:px-10 lg:px-16">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-[#d4af37]">Projects</p>
-            <h2 className="mt-4 text-3xl font-semibold md:text-5xl">Selected Work</h2>
+            <p className="text-sm uppercase tracking-[0.35em] text-[#d4af37]">{copy.projectsLabel}</p>
+            <h2 className="mt-4 text-3xl font-semibold md:text-5xl">{copy.selectedWork}</h2>
           </div>
           <p className="max-w-xl leading-7 text-white/70">
-            A selection of frontend projects focused on responsive UI, clean component structure, performance and smooth user experience.
+            {copy.projectsIntro}
           </p>
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <article
-              key={project.title}
+              key={project.href}
               className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]"
             >
               <div className="overflow-hidden">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={copy.projects[index].title}
                   className="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="p-7">
-                <h3 className="text-2xl font-semibold">{project.title}</h3>
-                <p className="mt-3 leading-7 text-white/70">{project.text}</p>
+                <h3 className="text-2xl font-semibold">{copy.projects[index].title}</h3>
+                <p className="mt-3 leading-7 text-white/70">{copy.projects[index].text}</p>
                 <a href={project.href} className="mt-6 inline-flex text-sm text-[#d4af37]">
-                  Open case →
+                  {copy.openCase} →
                 </a>
               </div>
             </article>
@@ -205,14 +309,13 @@ My focus is clean component structure, smooth interactions, performance and layo
       <section id="contact" className="border-t border-white/10 bg-white/[0.03]">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:px-10 lg:grid-cols-[1fr_0.9fr] lg:px-16">
           <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-[#d4af37]">Contact</p>
+            <p className="text-sm uppercase tracking-[0.35em] text-[#d4af37]">{copy.contactLabel}</p>
             <h2 className="mt-4 text-3xl font-semibold md:text-5xl">
-              Let’s build something useful together.
-              
-
+              {copy.contactTitle}
             </h2>
             <p className="mt-6 max-w-xl leading-7 text-white/70">
-I’m open to frontend developer, UI engineer and freelance opportunities in Berlin and remote.            </p>
+              {copy.contactText}
+            </p>
           </div>
           <div className="rounded-[2rem] border border-white/10 bg-black/40 p-8">
             <div className="space-y-5 text-white/75">
@@ -221,7 +324,7 @@ I’m open to frontend developer, UI engineer and freelance opportunities in Ber
               <p>GitHub: github.com/Diana18881</p>
             </div>
             <button className="mt-8 rounded-full bg-[#d4af37] px-6 py-3 text-sm font-medium text-black">
-              Write to me
+              {copy.writeToMe}
             </button>
           </div>
         </div>
