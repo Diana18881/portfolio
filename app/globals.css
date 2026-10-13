@@ -68,6 +68,21 @@ html {
   }
 }
 
+@keyframes ken-burns {
+  from {
+    transform: scale(1.18) translate(2%, 2%);
+  }
+}
+
+@keyframes scroll-cue {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(200%);
+  }
+}
+
 @keyframes marquee {
   to {
     transform: translateX(-50%);
