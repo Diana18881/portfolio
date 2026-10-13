@@ -9,21 +9,44 @@ const translations = {
     navProjects: 'Projects',
     navSkills: 'Skills',
     navContact: 'Contact',
+    languageLabel: 'Language',
     eyebrow: 'FRONTEND DEVELOPER • UI ENGINEER • BERLIN',
     heroTitle: 'Frontend Developer building polished web interfaces.',
     heroText:
-      'I build responsive, modern interfaces with React, Next.js, TypeScript and motion-focused UI. Based in Berlin and open to frontend / UI engineer roles.',
+      'I build responsive, modern interfaces with React, Next.js and TypeScript, with an eye for detail and motion. Based in Berlin and open to frontend roles.',
     viewProjects: 'View projects',
+    downloadCv: 'Download CV (PDF, German)',
     focus: 'Focus',
-    focusStack: 'React / Next.js, TypeScript, responsive UI, performance',
+    focusStack: 'years of frontend experience with React / Next.js, TypeScript and responsive UI',
     focusUi: 'clean layouts, animations, accessible components',
-    focusBerlin: 'open to frontend roles, freelance and full-time',
+    focusBerlin: 'open to full-time roles and freelance projects',
     aboutLabel: 'About',
     aboutTitle: 'Frontend developer with a strong eye for UI details.',
     aboutTextOne:
       'I enjoy turning ideas into interfaces people actually use: product catalogs and checkout flows, data dashboards, booking forms and the admin tools behind them. Every project on this site is a working app, not a static mockup.',
     aboutTextTwo:
-      'I create responsive, accessible and visually polished interfaces with React, Next.js and TypeScript. My focus is clean component structure, smooth interactions, performance and layouts that feel sharp on both desktop and mobile.',
+      'With a bachelor’s degree in information systems and around three years of frontend experience, I take websites from the first layout to deployment: responsive UI, components, APIs, data, tests and release. I care about maintainable code, accessibility (WCAG), privacy and solid web security basics.',
+    educationLabel: 'Education',
+    education: [
+      {
+        title: 'Bachelor of Information Systems and Technologies',
+        place: 'Igor Sikorsky Kyiv Polytechnic Institute · recognised in Germany',
+        period: '2019 – 2023',
+      },
+      {
+        title: 'Frontend Web Development, further training',
+        place: 'TEL-RAN IT School, Germany',
+        period: '2023 – 2024',
+      },
+    ],
+    languagesLabel: 'Languages',
+    languages: [
+      { name: 'German', level: 'B2 (telc)' },
+      { name: 'English', level: 'B2' },
+      { name: 'Ukrainian', level: 'Native' },
+      { name: 'Russian', level: 'Native' },
+    ],
+    toolkitLabel: 'Toolkit',
     skillsLabel: 'Skills',
     features: [
       {
@@ -32,11 +55,11 @@ const translations = {
       },
       {
         title: 'Responsive',
-        text: 'Responsive design for mobile, tablet and desktop without compromises.',
+        text: 'Mobile-first design that works on phones, tablets and desktops without compromises.',
       },
       {
         title: 'Performance',
-        text: 'Optimized loading, smooth animations and high performance.',
+        text: 'Optimized loading, smooth animations and fast interfaces.',
       },
     ],
     projectsLabel: 'Projects',
@@ -46,85 +69,106 @@ const translations = {
     projects: [
       {
         title: 'E-commerce Platform',
-        text: 'Product catalog, cart flow, filters and responsive shopping experience built with modern frontend patterns.',
+        text: 'Premium demo store with product pages, quick view, bag and three-step checkout. Orders show up live in the dashboard.',
       },
       {
         title: 'Dashboard System',
-        text: 'Component-based approach, charts, tables and user-friendly scenarios.',
+        text: 'Component-based analytics dashboard with charts, tables and filters.',
       },
       {
         title: 'Brand Website',
-        text: 'Landing page with atmosphere, strong typography and content that sells.',
+        text: 'Restaurant website with menu, gallery and table reservations, plus an admin view.',
       },
     ],
-    openCase: 'Open case',
+    openCase: 'Open project',
     contactLabel: 'Contact',
     contactTitle: 'Let’s build something useful together.',
     contactText:
-      'I’m open to frontend developer, UI engineer and freelance opportunities in Berlin and remote.',
+      'I’m open to frontend developer roles and freelance projects in Berlin or remote.',
     writeToMe: 'Write to me',
-    switchLanguage: 'Switch to German',
   },
   DE: {
     navAbout: 'Über mich',
     navProjects: 'Projekte',
-    navSkills: 'Skills',
+    navSkills: 'Kompetenzen',
     navContact: 'Kontakt',
-    eyebrow: 'FRONTEND DEVELOPER • UI ENGINEER • BERLIN',
-    heroTitle: 'Frontend Developerin für hochwertige Web Interfaces.',
+    languageLabel: 'Sprache',
+    eyebrow: 'FRONTEND-ENTWICKLERIN • UI-ENTWICKLUNG • BERLIN',
+    heroTitle: 'Frontend-Entwicklerin für durchdachte Weboberflächen.',
     heroText:
-      'Ich entwickle responsive, moderne Interfaces mit React, Next.js, TypeScript und motion-fokussierter UI. Ich lebe in Berlin und bin offen für Frontend- und UI-Engineer-Rollen.',
+      'Ich entwickle responsive, moderne Benutzeroberflächen mit React, Next.js und TypeScript, mit Liebe zum Detail und zu Animationen. Ich lebe in Berlin und suche eine Stelle als Frontend-Entwicklerin.',
     viewProjects: 'Projekte ansehen',
+    downloadCv: 'Lebenslauf herunterladen (PDF)',
     focus: 'Fokus',
-    focusStack: 'React / Next.js, TypeScript, responsive UI, Performance',
-    focusUi: 'klare Layouts, Animationen, zugängliche Komponenten',
-    focusBerlin: 'offen für Frontend-Rollen, Freelance und Vollzeit',
+    focusStack: 'Jahre Erfahrung in der Frontend-Entwicklung mit React / Next.js, TypeScript und responsivem UI',
+    focusUi: 'klare Layouts, Animationen, barrierefreie Komponenten',
+    focusBerlin: 'offen für Festanstellung und Freelance-Projekte',
     aboutLabel: 'Über mich',
-    aboutTitle: 'Frontend Developerin mit starkem Blick für UI Details.',
+    aboutTitle: 'Frontend-Entwicklerin mit Blick fürs Detail.',
     aboutTextOne:
-      'Ich verwandle Ideen gern in Interfaces, die wirklich genutzt werden: Produktkataloge und Checkout-Flows, Daten-Dashboards, Buchungsformulare und die Admin-Tools dahinter. Jedes Projekt auf dieser Seite ist eine funktionierende App, kein statisches Mockup.',
+      'Ich verwandle Ideen in Oberflächen, die Menschen wirklich nutzen: Produktkataloge und Checkouts, Daten-Dashboards, Buchungsformulare und die Admin-Tools dahinter. Jedes Projekt auf dieser Seite ist eine funktionierende Anwendung, kein statisches Mockup.',
     aboutTextTwo:
-      'Ich erstelle responsive, zugängliche und visuell präzise Interfaces mit React, Next.js und TypeScript. Mein Fokus liegt auf sauberer Komponentenstruktur, smoothen Interaktionen, Performance und Layouts, die auf Desktop und Mobile stark wirken.',
-    skillsLabel: 'Skills',
+      'Mit einem Bachelorabschluss in Informationssystemen und rund drei Jahren Erfahrung in der Frontend-Entwicklung begleite ich Websites vom ersten Layout bis zum Deployment: responsive Oberflächen, Komponenten, Schnittstellen, Daten, Tests und Veröffentlichung. Mir sind wartbarer Code, Barrierefreiheit (WCAG), Datenschutz und grundlegende Websicherheit wichtig.',
+    educationLabel: 'Ausbildung',
+    education: [
+      {
+        title: 'Bachelor in Informationssystemen und -technologien',
+        place: 'Polytechnisches Institut Kyjiw „Igor Sikorsky“ · in Deutschland anerkannt',
+        period: '2019 – 2023',
+      },
+      {
+        title: 'Weiterbildung Frontend Web Development',
+        place: 'TEL-RAN IT School, Deutschland',
+        period: '2023 – 2024',
+      },
+    ],
+    languagesLabel: 'Sprachen',
+    languages: [
+      { name: 'Deutsch', level: 'B2 (telc)' },
+      { name: 'Englisch', level: 'B2' },
+      { name: 'Ukrainisch', level: 'Muttersprache' },
+      { name: 'Russisch', level: 'Muttersprache' },
+    ],
+    toolkitLabel: 'Werkzeuge',
+    skillsLabel: 'Kompetenzen',
     features: [
       {
-        title: 'Clean UI',
+        title: 'Klares UI',
         text: 'Durchdachte Layouts, klare Hierarchie und sorgfältige visuelle Details.',
       },
       {
         title: 'Responsive',
-        text: 'Responsive Design für Mobile, Tablet und Desktop ohne Kompromisse.',
+        text: 'Mobile-first-Design für Smartphone, Tablet und Desktop ohne Kompromisse.',
       },
       {
         title: 'Performance',
-        text: 'Optimiertes Laden, flüssige Animationen und hohe Geschwindigkeit.',
+        text: 'Schnelle Ladezeiten, flüssige Animationen und reaktionsschnelle Oberflächen.',
       },
     ],
     projectsLabel: 'Projekte',
-    selectedWork: 'Ausgewählte Arbeiten',
+    selectedWork: 'Ausgewählte Projekte',
     projectsIntro:
-      'Eine Auswahl an Frontend-Projekten mit Fokus auf responsive UI, saubere Komponentenstruktur, Performance und gute User Experience.',
+      'Eine Auswahl meiner Frontend-Projekte mit Fokus auf responsive Oberflächen, saubere Komponentenstruktur, Performance und eine angenehme Nutzererfahrung.',
     projects: [
       {
-        title: 'E-Commerce Plattform',
-        text: 'Produktkatalog, Warenkorb, Filter und responsive Shopping Experience mit modernen Frontend-Patterns.',
+        title: 'E-Commerce-Plattform',
+        text: 'Premium-Demoshop mit Produktseiten, Schnellansicht, Warenkorb und dreistufigem Checkout. Bestellungen erscheinen live im Dashboard.',
       },
       {
-        title: 'Dashboard System',
-        text: 'Komponentenbasierter Ansatz mit Charts, Tabellen und nutzerfreundlichen Szenarien.',
+        title: 'Dashboard-System',
+        text: 'Komponentenbasiertes Analyse-Dashboard mit Diagrammen, Tabellen und Filtern.',
       },
       {
-        title: 'Brand Website',
-        text: 'Landingpage mit Atmosphäre, starker Typografie und Content, der verkauft.',
+        title: 'Markenwebsite',
+        text: 'Restaurant-Website mit Speisekarte, Galerie und Tischreservierung, inklusive Admin-Bereich.',
       },
     ],
-    openCase: 'Case öffnen',
+    openCase: 'Projekt ansehen',
     contactLabel: 'Kontakt',
-    contactTitle: 'Lass uns etwas Nützliches bauen.',
+    contactTitle: 'Lass uns gemeinsam etwas Nützliches bauen.',
     contactText:
-      'Ich bin offen für Frontend Developer, UI Engineer und Freelance Opportunities in Berlin oder remote.',
+      'Ich bin offen für Stellen als Frontend-Entwicklerin und für Freelance-Projekte, in Berlin oder remote.',
     writeToMe: 'Schreib mir',
-    switchLanguage: 'Zu Englisch wechseln',
   },
 }
 
@@ -146,6 +190,14 @@ const projects = [
   },
 ]
 
+const toolkit = [
+  { group: 'Frontend', items: 'React, Next.js, TypeScript, JavaScript, Tailwind CSS, Redux' },
+  { group: 'Backend & Data', items: 'Node.js, Express, REST, GraphQL, SQL, PostgreSQL' },
+  { group: 'Quality', items: 'Jest, Cypress, React Testing Library, Git, CI/CD, Vercel' },
+]
+
+const CV_PATH = '/Diana-Tsymbaliuk-Lebenslauf.pdf'
+
 const contacts = [
   { label: 'Email', value: 'ukrdiana21@gmail.com', href: 'mailto:ukrdiana21@gmail.com' },
   {
@@ -158,16 +210,26 @@ const contacts = [
 
 export default function HomePage({ language }: { language: Language }) {
   const copy = translations[language]
-  const otherLanguage = language === 'EN' ? 'DE' : 'EN'
   const languageToggle = (
-    <Link
-      href={otherLanguage === 'EN' ? '/' : '/de'}
-      hrefLang={otherLanguage.toLowerCase()}
-      aria-label={copy.switchLanguage}
-      className="rounded-full border border-white/20 px-3 py-1 text-sm text-white hover:border-white/50"
+    <div
+      role="group"
+      aria-label={copy.languageLabel}
+      className="flex rounded-full border border-white/20 p-0.5 text-xs font-medium"
     >
-      {otherLanguage}
-    </Link>
+      {(['EN', 'DE'] as const).map((option) => (
+        <Link
+          key={option}
+          href={option === 'EN' ? '/' : '/de'}
+          hrefLang={option.toLowerCase()}
+          aria-current={option === language ? 'page' : undefined}
+          className={`rounded-full px-3 py-1 transition ${
+            option === language ? 'bg-white text-black' : 'text-white/60 hover:text-white'
+          }`}
+        >
+          {option}
+        </Link>
+      ))}
+    </div>
   )
   const navLinks = [
     { href: '#about', label: copy.navAbout },
@@ -232,6 +294,13 @@ export default function HomePage({ language }: { language: Language }) {
                 >
                   {copy.viewProjects}
                 </a>
+                <a
+                  href={CV_PATH}
+                  download
+                  className="rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white transition hover:border-white/60"
+                >
+                  {copy.downloadCv}
+                </a>
               </div>
             </div>
 
@@ -277,6 +346,43 @@ export default function HomePage({ language }: { language: Language }) {
             <p>
               {copy.aboutTextTwo}
             </p>
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-7">
+            <p className="text-sm uppercase tracking-[0.3em] text-white/50">{copy.educationLabel}</p>
+            <ul className="mt-6 space-y-6">
+              {copy.education.map((item) => (
+                <li key={item.title}>
+                  <p className="text-sm text-[#d4af37]">{item.period}</p>
+                  <p className="mt-1 font-medium">{item.title}</p>
+                  <p className="mt-1 text-sm leading-6 text-white/55">{item.place}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-7">
+            <p className="text-sm uppercase tracking-[0.3em] text-white/50">{copy.languagesLabel}</p>
+            <ul className="mt-6 grid grid-cols-2 gap-3">
+              {copy.languages.map((item) => (
+                <li key={item.name} className="rounded-2xl bg-white/[0.04] p-4">
+                  <p className="font-medium">{item.name}</p>
+                  <p className="mt-1 text-sm text-white/55">{item.level}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-7">
+            <p className="text-sm uppercase tracking-[0.3em] text-white/50">{copy.toolkitLabel}</p>
+            <ul className="mt-6 space-y-5">
+              {toolkit.map((item) => (
+                <li key={item.group}>
+                  <p className="font-medium">{item.group}</p>
+                  <p className="mt-1 text-sm leading-6 text-white/55">{item.items}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -369,6 +475,13 @@ export default function HomePage({ language }: { language: Language }) {
               className="mt-8 inline-flex rounded-full bg-[#d4af37] px-6 py-3 text-sm font-medium text-black transition hover:scale-[1.02]"
             >
               {copy.writeToMe}
+            </a>
+            <a
+              href={CV_PATH}
+              download
+              className="ml-3 mt-8 inline-flex rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white transition hover:border-white/60"
+            >
+              CV
             </a>
           </div>
         </div>
