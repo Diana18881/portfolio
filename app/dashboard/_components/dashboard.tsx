@@ -37,7 +37,7 @@ const SECTIONS = [
   { id: 'orders', label: 'Orders', icon: 'M5 4h14v16H5zM9 9h6M9 13h6M9 17h3' },
 ]
 
-const TOUR_VIDEO = '/dashboard-tour.mp4'
+const TOUR_VIDEO = '/dashboard-tour-v2.mp4'
 const TOUR_POSTER = '/dashboard-tour-poster.jpg'
 const INTRO_KEY = 'dashboard-intro-dismissed'
 

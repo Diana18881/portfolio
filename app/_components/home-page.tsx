@@ -78,7 +78,7 @@ const translations = {
       },
       {
         title: 'Brand Website',
-        text: 'Restaurant website with menu, gallery and table reservations, plus an admin view.',
+        text: 'Fine-dining restaurant site in English and German: signature dishes, menu, gallery and a three-step table booking, plus an admin with a 3D floor plan.',
       },
     ],
     openCase: 'Open project',
@@ -161,7 +161,7 @@ const translations = {
       },
       {
         title: 'Markenwebsite',
-        text: 'Restaurant-Website mit Speisekarte, Galerie und Tischreservierung, inklusive Admin-Bereich.',
+        text: 'Restaurant-Website auf Deutsch und Englisch: Signature-Gerichte, Speisekarte, Galerie und Tischreservierung in drei Schritten, dazu ein Admin-Bereich mit 3D-Raumplan.',
       },
     ],
     openCase: 'Projekt ansehen',
@@ -182,12 +182,11 @@ const projects = [
   {
     href: '/dashboard',
     image: '/dashboard-tour-card.jpg',
-    video: '/dashboard-tour.mp4',
+    video: '/dashboard-tour-v2.mp4',
   },
   {
     href: '/brand',
-    image:
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop',
+    image: '/brand-card.jpg',
   },
 ]
 
