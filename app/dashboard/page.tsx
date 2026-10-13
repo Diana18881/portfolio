@@ -24,7 +24,7 @@ const orders: Order[] = [
   {
     id: '#1048',
     customer: 'Mia Schneider',
-    product: 'Noir Leather Tote',
+    product: 'Wicker Top-Handle Bag',
     status: 'Paid',
     revenue: 189,
     channel: 'Organic',
@@ -33,7 +33,7 @@ const orders: Order[] = [
   {
     id: '#1047',
     customer: 'Jonas Weber',
-    product: 'Cloud Runner Sneaker',
+    product: 'Knit Runner',
     status: 'Pending',
     revenue: 142,
     channel: 'Paid search',
@@ -42,7 +42,7 @@ const orders: Order[] = [
   {
     id: '#1046',
     customer: 'Lea Hoffmann',
-    product: 'Soft Gold Watch',
+    product: 'Steel Chronograph Watch',
     status: 'Paid',
     revenue: 96,
     channel: 'Email',
@@ -51,7 +51,7 @@ const orders: Order[] = [
   {
     id: '#1045',
     customer: 'Noah Richter',
-    product: 'Minimal Crossbody',
+    product: 'Structured Top-Handle Bag',
     status: 'Refunded',
     revenue: 128,
     channel: 'Social',
@@ -60,7 +60,7 @@ const orders: Order[] = [
   {
     id: '#1044',
     customer: 'Emma Fischer',
-    product: 'City Low Sneaker',
+    product: 'Canvas Work Sneaker',
     status: 'Paid',
     revenue: 118,
     channel: 'Organic',
