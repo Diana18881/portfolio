@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 
@@ -375,7 +376,9 @@ export default function EcommercePage() {
             </div>
 
             <div className="overflow-hidden rounded-[2rem] bg-[#1d1a17] p-3 shadow-2xl">
-              <img
+              <Image
+                width={1400}
+                height={900}
                 src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1400&auto=format&fit=crop"
                 alt="Fashion store interior"
                 className="h-[420px] w-full rounded-[1.5rem] object-cover"
@@ -459,7 +462,9 @@ export default function EcommercePage() {
             </div>
 
             <div className="mt-8 grid gap-5 rounded-[1.5rem] bg-[#f7f3ed] p-4 md:grid-cols-[180px_1fr_auto] md:items-center">
-              <img
+              <Image
+                width={1200}
+                height={800}
                 src={selectedProduct.image}
                 alt={selectedProduct.name}
                 className="h-44 w-full rounded-[1.25rem] object-cover md:h-36"
@@ -491,7 +496,9 @@ export default function EcommercePage() {
                   className="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#fbfaf8]"
                 >
                   <div className="relative">
-                    <img
+                    <Image
+                      width={1200}
+                      height={800}
                       src={product.image}
                       alt={product.name}
                       className="h-64 w-full object-cover"
@@ -597,7 +604,9 @@ export default function EcommercePage() {
                     className="rounded-[1.5rem] bg-white/5 p-3"
                   >
                     <div className="flex items-center gap-4">
-                      <img
+                      <Image
+                        width={160}
+                        height={160}
                         src={item.product.image}
                         alt=""
                         className="h-20 w-20 rounded-[1rem] object-cover"
@@ -782,7 +791,9 @@ export default function EcommercePage() {
               </button>
             </div>
             <div className="grid gap-6 md:grid-cols-[0.9fr_1fr] md:items-center">
-              <img
+              <Image
+                width={1200}
+                height={800}
                 src={modalProduct.image}
                 alt={modalProduct.name}
                 className="h-80 w-full rounded-[1.5rem] object-cover sm:h-96"

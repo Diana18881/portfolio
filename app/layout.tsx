@@ -13,9 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Diana Tsymbaliuk | Frontend Developer",
+  metadataBase: new URL("https://diana-portfolio-two-roan.vercel.app"),
+  title: {
+    default: "Diana Tsymbaliuk | Frontend Developer",
+    template: "%s | Diana Tsymbaliuk",
+  },
   description:
     "Frontend developer portfolio with responsive UI, Next.js projects and e-commerce case studies.",
+  alternates: { canonical: "/", languages: { en: "/", de: "/de" } },
+  openGraph: {
+    type: "website",
+    siteName: "Diana Tsymbaliuk",
+    locale: "en_US",
+    url: "/",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({

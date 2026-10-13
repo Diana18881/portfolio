@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
 
@@ -640,10 +641,13 @@ export default function BrandWebsitePage() {
   return (
     <main className="min-h-screen bg-[#fbf6ec] text-[#171714]">
       <section className="relative min-h-screen overflow-hidden bg-[#10231d] text-white">
-        <img
+        <Image
+          fill
+          priority
+          sizes="100vw"
           src={selectedImage.src}
           alt={selectedImage.alt}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#06110d]/90 via-[#10231d]/55 to-black/15" />
 
@@ -786,7 +790,9 @@ export default function BrandWebsitePage() {
 
       <section className="mx-auto grid max-w-7xl gap-5 px-4 pb-16 sm:px-6 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-12 lg:pb-24">
         <div className="overflow-hidden rounded-[2rem] bg-[#171714] p-3 shadow-sm">
-          <img
+          <Image
+            width={1200}
+            height={800}
             src={selectedImage.src}
             alt={selectedImage.alt}
             className="h-[420px] w-full rounded-[1.5rem] object-cover sm:h-[520px]"
@@ -804,7 +810,9 @@ export default function BrandWebsitePage() {
                   : 'border-black/10 bg-white/60 hover:bg-white'
               }`}
             >
-              <img
+              <Image
+                width={1200}
+                height={800}
                 src={image.src}
                 alt={image.alt}
                 className="h-24 w-full rounded-[1rem] object-cover"
@@ -858,7 +866,9 @@ export default function BrandWebsitePage() {
                 key={item.name}
                 className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.04]"
               >
-                <img
+                <Image
+                  width={1200}
+                  height={800}
                   src={item.image}
                   alt={item.name}
                   className="h-64 w-full object-cover"
@@ -1214,7 +1224,9 @@ export default function BrandWebsitePage() {
       {selectedDish ? (
         <div className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4 backdrop-blur-sm">
           <div className="max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-[2rem] bg-[#fbf6ec] p-4 shadow-2xl md:p-6">
-            <img
+            <Image
+              width={1200}
+              height={800}
               src={selectedDish.image}
               alt={selectedDish.name}
               className="h-72 w-full rounded-[1.5rem] object-cover"

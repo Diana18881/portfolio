@@ -4,14 +4,15 @@
 
 ![Portfolio homepage](docs/home.jpg)
 
-Personal portfolio site for a Frontend Developer / UI Engineer based in Berlin. Built as a single-page site with sections for About, Projects, Process and Contact, plus a case-study page walking through a featured e-commerce project.
+Personal portfolio site for a Frontend Developer / UI Engineer based in Berlin. The homepage has About, Skills, Projects and Contact sections and links to three working demo apps.
 
 ## Features
 
-- Sections: About, Projects, Process, Contact
-- Language switcher (EN)
-- Case-study subpage for a featured project (product catalog, cart flow, filters)
-- Responsive, animated, dark-themed layout
+- English (`/`) and German (`/de`) versions, statically rendered
+- **E-commerce Platform** (`/ecommerce`): product catalog, filters, cart and checkout
+- **Dashboard System** (`/dashboard`): charts and tables; orders placed in the shop appear here (shared via `localStorage`)
+- **Brand Website** (`/brand`): restaurant site with menu, gallery and table reservations, managed in an admin view (`/brand/admin`)
+- Responsive dark layout, optimized images (`next/image`), Open Graph preview image
 
 ## Tech Stack
 
