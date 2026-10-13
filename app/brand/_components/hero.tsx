@@ -1,7 +1,28 @@
+'use client'
+
 import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
 import { IMAGES, type Copy } from '../_lib/content'
 
+const TOUR_VIDEO = '/brand-tour.mp4'
+const TOUR_POSTER = '/brand-tour-poster.jpg'
+
 export default function Hero({ copy, openToday }: { copy: Copy; openToday: boolean | null }) {
+  const [tourOpen, setTourOpen] = useState(false)
+  const dialogRef = useRef<HTMLDialogElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (!dialog) return
+    if (tourOpen && !dialog.open) {
+      dialog.showModal()
+      videoRef.current?.play().catch(() => {})
+    }
+    if (!tourOpen && dialog.open) dialog.close()
+    if (!tourOpen) videoRef.current?.pause()
+  }, [tourOpen])
+
   return (
     <section id="top" className="relative flex min-h-[100svh] items-end overflow-hidden bg-[#0f1f1a] text-[#f3ede2]">
       <Image
@@ -38,6 +59,18 @@ export default function Hero({ copy, openToday }: { copy: Copy; openToday: boole
             <a href="#menu" className="rounded-full border border-white/30 px-7 py-4 text-sm font-medium backdrop-blur-md transition hover:bg-white hover:text-[#0f1f1a]">
               {copy.viewMenu}
             </a>
+            <button
+              type="button"
+              onClick={() => setTourOpen(true)}
+              className="group inline-flex items-center gap-3 rounded-full border border-white/30 py-2 pl-2 pr-6 text-sm font-medium backdrop-blur-md transition hover:bg-white hover:text-[#0f1f1a]"
+            >
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#c8a46a] text-[#0f1f1a] transition group-hover:scale-110">
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="ml-0.5 h-4 w-4 fill-current">
+                  <path d="M8 5.5v13l10.5-6.5L8 5.5Z" />
+                </svg>
+              </span>
+              {copy.watchTour}
+            </button>
           </div>
         </div>
       </div>
@@ -48,6 +81,36 @@ export default function Hero({ copy, openToday }: { copy: Copy; openToday: boole
           <span className="block h-1/2 w-px bg-[#c8a46a] motion-safe:animate-[scroll-cue_2s_ease-in-out_infinite]" />
         </span>
       </a>
+
+      <dialog
+        ref={dialogRef}
+        onClose={() => setTourOpen(false)}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) setTourOpen(false)
+        }}
+        aria-label={copy.tourLabel}
+        className="m-auto w-[min(72rem,calc(100%-2rem))] overflow-visible bg-transparent p-0 backdrop:bg-black/80 backdrop:backdrop-blur-md open:motion-safe:animate-[modal-in_0.45s_cubic-bezier(0.22,1,0.36,1)]"
+      >
+        <button
+          type="button"
+          onClick={() => setTourOpen(false)}
+          aria-label={copy.closeVideo}
+          className="absolute -top-14 right-0 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition hover:rotate-90 hover:bg-white hover:text-black"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-none stroke-current stroke-2">
+            <path d="M6 6l12 12M18 6 6 18" />
+          </svg>
+        </button>
+        <video
+          ref={videoRef}
+          src={TOUR_VIDEO}
+          poster={TOUR_POSTER}
+          controls
+          playsInline
+          preload="none"
+          className="aspect-video w-full rounded-[1.5rem] bg-black shadow-2xl"
+        />
+      </dialog>
     </section>
   )
 }

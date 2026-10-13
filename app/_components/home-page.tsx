@@ -186,7 +186,8 @@ const projects = [
   },
   {
     href: '/brand',
-    image: '/brand-card.jpg',
+    image: '/brand-tour-card.jpg',
+    video: '/brand-tour.mp4',
   },
 ]
 
