@@ -171,7 +171,7 @@ export default function CheckoutFlow() {
     }
 
     const newOrder: PortfolioOrder = {
-      id: `#${Math.floor(2000 + Math.random() * 7000)}`,
+      id: `#LM-${Math.floor(20000 + Math.random() * 70000)}`,
       customer: `${form.firstName.trim()} ${form.lastName.trim()}`,
       email: form.email.trim(),
       product: lines.map((line) => `${line.quantity}x ${line.product.name}`).join(', '),
@@ -180,6 +180,14 @@ export default function CheckoutFlow() {
       channel: 'Checkout demo',
       date: 'Just now',
       items: itemCount,
+      createdAt: new Date().toISOString(),
+      city: form.city.trim(),
+      lines: lines.map((line) => ({
+        productId: line.productId,
+        size: line.size,
+        quantity: line.quantity,
+        price: line.product.price,
+      })),
     }
 
     saveOrder(newOrder)

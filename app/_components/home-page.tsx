@@ -74,7 +74,7 @@ const translations = {
       },
       {
         title: 'Dashboard System',
-        text: 'Component-based analytics dashboard with charts, tables and filters.',
+        text: 'Admin dashboard for the Luma store: clear KPIs, interactive charts and order management that works on phones. Live orders from the shop appear instantly.',
       },
       {
         title: 'Brand Website',
@@ -157,7 +157,7 @@ const translations = {
       },
       {
         title: 'Dashboard-System',
-        text: 'Komponentenbasiertes Analyse-Dashboard mit Diagrammen, Tabellen und Filtern.',
+        text: 'Admin-Dashboard für den Luma-Shop: verständliche Kennzahlen, interaktive Diagramme und Bestellverwaltung, auch auf dem Smartphone. Live-Bestellungen aus dem Shop erscheinen sofort.',
       },
       {
         title: 'Markenwebsite',
@@ -181,8 +181,8 @@ const projects = [
   },
   {
     href: '/dashboard',
-    image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
+    image: '/dashboard-tour-card.jpg',
+    video: '/dashboard-tour.mp4',
   },
   {
     href: '/brand',

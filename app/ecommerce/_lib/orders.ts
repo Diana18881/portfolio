@@ -1,5 +1,12 @@
-// Shared with app/dashboard/page.tsx, which reads these orders to show live revenue.
-const ORDERS_STORAGE_KEY = 'portfolio-commerce-orders'
+// Shared with the dashboard case, which reads these orders and shows them live.
+export const ORDERS_STORAGE_KEY = 'portfolio-commerce-orders'
+
+export type PortfolioOrderLine = {
+  productId: number
+  size: string
+  quantity: number
+  price: number
+}
 
 export type PortfolioOrder = {
   id: string
@@ -11,6 +18,10 @@ export type PortfolioOrder = {
   channel: string
   date: string
   items: number
+  // Added later; older saved orders may not have these.
+  createdAt?: string
+  city?: string
+  lines?: PortfolioOrderLine[]
 }
 
 export const saveOrder = (order: PortfolioOrder) => {
