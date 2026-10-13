@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import VideoPreview from './video-preview'
 
 export type Language = 'EN' | 'DE'
 
@@ -175,8 +176,8 @@ const translations = {
 const projects = [
   {
     href: '/ecommerce',
-    image:
-      'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200&auto=format&fit=crop',
+    image: '/store-tour-card.jpg',
+    video: '/store-tour.mp4',
   },
   {
     href: '/dashboard',
@@ -422,20 +423,29 @@ export default function HomePage({ language }: { language: Language }) {
               className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]"
             >
               <div className="overflow-hidden">
-                <Image
-                  width={1200}
-                  height={800}
-                  sizes="(min-width: 1024px) 33vw, 100vw"
-                  src={project.image}
-                  alt={copy.projects[index].title}
-                  className="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
-                />
+                {project.video ? (
+                  <VideoPreview
+                    src={project.video}
+                    poster={project.image}
+                    label={copy.projects[index].title}
+                    className="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <Image
+                    width={1200}
+                    height={800}
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                    src={project.image}
+                    alt={copy.projects[index].title}
+                    className="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                )}
               </div>
               <div className="p-7">
                 <h3 className="text-2xl font-semibold">{copy.projects[index].title}</h3>
                 <p className="mt-3 leading-7 text-white/70">{copy.projects[index].text}</p>
                 <Link href={project.href} className="mt-6 inline-flex text-sm text-[#d4af37]">
- →
+                  {copy.openCase} →
                 </Link>
               </div>
             </article>

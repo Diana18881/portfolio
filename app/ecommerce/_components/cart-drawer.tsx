@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import { FREE_SHIPPING_FROM, formatPrice } from '../_lib/products'
 import { closeCart, getCartLines, setQuantity, useStore } from '../_lib/store'
+import { CloseIcon } from './icons'
 
 export default function CartDrawer() {
   const { cart, cartOpen } = useStore()
@@ -29,20 +30,20 @@ export default function CartDrawer() {
         if (event.target === event.currentTarget) closeCart()
       }}
       aria-labelledby="cart-title"
-      className="m-0 ml-auto h-dvh max-h-none w-full max-w-md bg-[#f7f3ed] p-0 text-[#171412] backdrop:bg-black/45 backdrop:backdrop-blur-sm"
+      className="m-0 ml-auto h-dvh max-h-none w-full max-w-md bg-[#f6f1ea] p-0 text-[#171412] backdrop:bg-[#14110f]/55 backdrop:backdrop-blur-md open:motion-safe:animate-[drawer-in_0.5s_cubic-bezier(0.22,1,0.36,1)]"
     >
       <div className="flex h-full flex-col">
         <div className="flex items-center justify-between border-b border-black/10 px-6 py-5">
-          <h2 id="cart-title" className="text-lg font-semibold">
+          <h2 id="cart-title" className="font-display text-3xl font-medium">
             Your bag
           </h2>
           <button
             type="button"
             onClick={closeCart}
             aria-label="Close bag"
-            className="grid h-9 w-9 place-items-center rounded-full text-xl hover:bg-black/5"
+            className="grid h-10 w-10 place-items-center rounded-full transition hover:rotate-90 hover:bg-black/5"
           >
-            ×
+            <CloseIcon />
           </button>
         </div>
 
@@ -79,7 +80,7 @@ export default function CartDrawer() {
                   <Image
                     width={160}
                     height={200}
-                    src={line.product.image}
+                    src={line.product.images[0]}
                     alt=""
                     className="h-28 w-22 shrink-0 rounded-xl object-cover"
                   />
@@ -92,7 +93,7 @@ export default function CartDrawer() {
                       >
                         {line.product.name}
                       </Link>
-                      <p className="font-medium">
+                      <p className="font-display text-lg font-semibold">
                         {formatPrice(line.product.price * line.quantity)}
                       </p>
                     </div>
@@ -134,15 +135,15 @@ export default function CartDrawer() {
             </ul>
 
             <div className="border-t border-black/10 px-6 py-5">
-              <div className="flex justify-between text-lg font-semibold">
-                <span>Subtotal</span>
-                <span>{formatPrice(subtotal)}</span>
+              <div className="flex items-baseline justify-between">
+                <span className="text-xs font-medium uppercase tracking-[0.2em]">Subtotal</span>
+                <span className="font-display text-3xl font-semibold">{formatPrice(subtotal)}</span>
               </div>
               <p className="mt-1 text-sm text-black/50">Shipping and discounts at checkout.</p>
               <Link
                 href="/ecommerce/checkout"
                 onClick={closeCart}
-                className="mt-5 block rounded-full bg-[#171412] px-6 py-4 text-center text-sm font-medium text-white transition hover:bg-black"
+                className="mt-5 block rounded-full bg-[#171412] px-6 py-4 text-center text-sm font-medium uppercase tracking-[0.15em] text-white transition hover:bg-black"
               >
                 Checkout
               </Link>

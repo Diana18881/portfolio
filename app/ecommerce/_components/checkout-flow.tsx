@@ -194,7 +194,7 @@ export default function CheckoutFlow() {
         <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-[#171412] text-2xl text-[#d4af37]">
           ✓
         </div>
-        <h1 className="mt-6 text-4xl font-semibold">Thank you, {form.firstName.trim()}!</h1>
+        <h1 className="mt-6 font-display text-5xl font-medium">Thank you, {form.firstName.trim()}!</h1>
         <p className="mt-4 text-lg leading-8 text-black/60">
           Order <strong className="text-black">{order.id}</strong> is confirmed. A confirmation
           would be sent to {order.email} in a real store.
@@ -281,7 +281,7 @@ export default function CheckoutFlow() {
   return (
     <main className="mx-auto grid max-w-7xl gap-10 px-5 py-10 md:px-8 lg:grid-cols-[1fr_400px] lg:gap-16">
       <div>
-        <h1 className="text-3xl font-semibold md:text-4xl">Checkout</h1>
+        <h1 className="font-display text-5xl font-medium">Checkout</h1>
 
         <ol className="mt-6 flex gap-2 text-sm" aria-label="Checkout steps">
           {steps.map((label, index) => (
@@ -476,7 +476,7 @@ export default function CheckoutFlow() {
                 <Image
                   width={120}
                   height={150}
-                  src={line.product.image}
+                  src={line.product.images[0]}
                   alt=""
                   className="h-20 w-16 rounded-lg object-cover"
                 />
@@ -551,9 +551,9 @@ export default function CheckoutFlow() {
             <dt className="text-black/60">Shipping</dt>
             <dd>{shipping ? formatPrice(shipping) : 'Free'}</dd>
           </div>
-          <div className="flex justify-between border-t border-black/10 pt-3 text-lg font-semibold">
-            <dt>Total</dt>
-            <dd>{formatPrice(total)}</dd>
+          <div className="flex items-baseline justify-between border-t border-black/10 pt-3">
+            <dt className="text-xs font-medium uppercase tracking-[0.2em]">Total</dt>
+            <dd className="font-display text-3xl font-semibold">{formatPrice(total)}</dd>
           </div>
         </dl>
       </aside>

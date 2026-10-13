@@ -11,14 +11,28 @@ export type CartLine = {
   quantity: number
 }
 
+export type Toast = {
+  id: number
+  productId: number
+  size: string
+}
+
 type StoreState = {
   cart: CartLine[]
   wishlist: number[]
   cartOpen: boolean
+  quickViewId: number | null
+  toast: Toast | null
 }
 
 const STORAGE_KEY = 'luma-store'
-const serverState: StoreState = { cart: [], wishlist: [], cartOpen: false }
+const serverState: StoreState = {
+  cart: [],
+  wishlist: [],
+  cartOpen: false,
+  quickViewId: null,
+  toast: null,
+}
 
 let state: StoreState | null = null
 const listeners = new Set<() => void>()
@@ -31,6 +45,8 @@ const readStorage = (): StoreState => {
       cart: Array.isArray(saved.cart) ? saved.cart : [],
       wishlist: Array.isArray(saved.wishlist) ? saved.wishlist : [],
       cartOpen: false,
+      quickViewId: null,
+      toast: null,
     }
   } catch {
     return { ...serverState }
@@ -57,7 +73,8 @@ const subscribe = (listener: () => void) => {
 
   const onStorage = (event: StorageEvent) => {
     if (event.key !== STORAGE_KEY) return
-    state = { ...readStorage(), cartOpen: getState().cartOpen }
+    const { cartOpen, quickViewId, toast } = getState()
+    state = { ...readStorage(), cartOpen, quickViewId, toast }
     listener()
   }
 
@@ -71,16 +88,23 @@ const subscribe = (listener: () => void) => {
 
 export const useStore = () => useSyncExternalStore(subscribe, getState, () => serverState)
 
-export const openCart = () => setState(() => ({ cartOpen: true }))
+export const openCart = () => setState(() => ({ cartOpen: true, toast: null }))
 
 export const closeCart = () => setState(() => ({ cartOpen: false }))
+
+export const openQuickView = (productId: number) => setState(() => ({ quickViewId: productId }))
+
+export const closeQuickView = () => setState(() => ({ quickViewId: null }))
+
+export const dismissToast = () => setState(() => ({ toast: null }))
 
 export const addToCart = (product: Product, size: string, quantity = 1) =>
   setState(({ cart }) => {
     const existing = cart.find((line) => line.productId === product.id && line.size === size)
+    const toast = { id: Date.now(), productId: product.id, size }
 
     if (!existing) {
-      return { cart: [...cart, { productId: product.id, size, quantity }], cartOpen: true }
+      return { cart: [...cart, { productId: product.id, size, quantity }], toast }
     }
 
     return {
@@ -89,7 +113,7 @@ export const addToCart = (product: Product, size: string, quantity = 1) =>
           ? { ...line, quantity: Math.min(line.quantity + quantity, product.stock) }
           : line,
       ),
-      cartOpen: true,
+      toast,
     }
   })
 

@@ -3,8 +3,15 @@
 import { useState } from 'react'
 import type { Product } from '../_lib/products'
 import { addToCart, toggleWishlist, useStore } from '../_lib/store'
+import { BagIcon, HeartIcon } from './icons'
 
-export default function PurchasePanel({ product }: { product: Product }) {
+export default function PurchasePanel({
+  product,
+  onAdded,
+}: {
+  product: Product
+  onAdded?: () => void
+}) {
   const { wishlist } = useStore()
   const hasSizes = product.sizes.length > 1
   const [size, setSize] = useState(hasSizes ? '' : product.sizes[0])
@@ -18,19 +25,25 @@ export default function PurchasePanel({ product }: { product: Product }) {
     }
 
     addToCart(product, size)
+    onAdded?.()
   }
 
   return (
     <div className="mt-8">
       {hasSizes ? (
         <fieldset>
-          <legend className="text-sm font-medium">Size</legend>
+          <div className="flex items-baseline justify-between">
+            <legend className="text-xs font-medium uppercase tracking-[0.2em]">
+              Size {size ? <span className="text-black/50">· {size}</span> : null}
+            </legend>
+            <span className="text-xs text-black/45 underline underline-offset-4">Size guide</span>
+          </div>
           <div className="mt-3 flex flex-wrap gap-2">
             {product.sizes.map((option) => (
               <label key={option} className="cursor-pointer">
                 <input
                   type="radio"
-                  name="size"
+                  name={`size-${product.id}`}
                   value={option}
                   checked={size === option}
                   onChange={() => {
@@ -39,14 +52,14 @@ export default function PurchasePanel({ product }: { product: Product }) {
                   }}
                   className="peer sr-only"
                 />
-                <span className="grid h-11 min-w-12 place-items-center rounded-full border border-black/15 bg-white px-4 text-sm transition peer-checked:border-[#171412] peer-checked:bg-[#171412] peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[#d4af37] hover:border-black/40">
+                <span className="grid h-12 min-w-14 place-items-center rounded-xl border border-black/15 bg-white px-4 text-sm transition peer-checked:border-[#171412] peer-checked:bg-[#171412] peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[#d4af37] hover:border-black/50">
                   {option}
                 </span>
               </label>
             ))}
           </div>
           {showSizeError ? (
-            <p role="alert" className="mt-2 text-sm text-red-700">
+            <p role="alert" className="mt-2 text-sm text-[#a3412b]">
               Please choose a size.
             </p>
           ) : null}
@@ -57,8 +70,9 @@ export default function PurchasePanel({ product }: { product: Product }) {
         <button
           type="button"
           onClick={handleAdd}
-          className="flex-1 rounded-full bg-[#171412] px-6 py-4 text-sm font-medium text-white transition hover:bg-black"
+          className="group flex flex-1 items-center justify-center gap-3 rounded-full bg-[#171412] px-6 py-4 text-sm font-medium uppercase tracking-[0.15em] text-white transition hover:bg-black"
         >
+          <BagIcon className="h-[1.1rem] w-[1.1rem] transition group-hover:-translate-y-0.5" />
           Add to bag
         </button>
         <button
@@ -66,17 +80,23 @@ export default function PurchasePanel({ product }: { product: Product }) {
           onClick={() => toggleWishlist(product.id)}
           aria-pressed={saved}
           aria-label={saved ? 'Remove from wishlist' : 'Save to wishlist'}
-          className={`grid h-[52px] w-[52px] place-items-center rounded-full border text-lg transition ${
-            saved ? 'border-[#171412] bg-[#171412] text-[#d4af37]' : 'border-black/15 hover:border-black/40'
+          className={`grid h-[54px] w-[54px] place-items-center rounded-full border transition hover:scale-105 ${
+            saved ? 'border-[#171412] bg-[#171412] text-[#e9cf8f]' : 'border-black/15 hover:border-black/50'
           }`}
         >
-          {saved ? '♥' : '♡'}
+          <HeartIcon filled={saved} />
         </button>
       </div>
-      <p className="mt-3 text-sm text-black/55">
-        {product.stock <= 5 ? `Only ${product.stock} left in stock` : 'In stock'} · Ships in 1–2
-        days
-      </p>
+      <ul className="mt-5 grid gap-2 text-sm text-black/60">
+        <li className="flex items-center gap-2">
+          <span className={`h-2 w-2 rounded-full ${product.stock <= 6 ? 'bg-[#d08a2c]' : 'bg-[#4f8a5b]'}`} />
+          {product.stock <= 6 ? `Only ${product.stock} left, order soon` : 'In stock, ships in 1–2 days'}
+        </li>
+        <li className="flex items-center gap-2">
+          <span className="h-2 w-2 rounded-full bg-black/20" />
+          Free returns within 30 days
+        </li>
+      </ul>
     </div>
   )
 }
