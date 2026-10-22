@@ -11,22 +11,22 @@ const translations = {
     navSkills: 'Skills',
     navContact: 'Contact',
     languageLabel: 'Language',
-    eyebrow: 'FRONTEND DEVELOPER • UI ENGINEER • BERLIN',
-    heroTitle: 'Frontend Developer building polished web interfaces.',
+    eyebrow: 'SOFTWARE DEVELOPER • FRONTEND • BERLIN',
+    heroTitle: 'Software Developer building polished web interfaces.',
     heroText:
-      'I build responsive, modern interfaces with React, Next.js and TypeScript, with an eye for detail and motion. Based in Berlin and open to frontend roles.',
+      'I build responsive, modern interfaces with React, Next.js and TypeScript, with an eye for detail and motion. Based in Berlin and open to software developer roles.',
     viewProjects: 'View projects',
     downloadCv: 'Download CV (PDF, German)',
     focus: 'Focus',
-    focusStack: 'years of frontend experience with React / Next.js, TypeScript and responsive UI',
+    focusStack: 'React / Next.js, TypeScript and responsive UI',
     focusUi: 'clean layouts, animations, accessible components',
     focusBerlin: 'open to full-time roles and freelance projects',
     aboutLabel: 'About',
-    aboutTitle: 'Frontend developer with a strong eye for UI details.',
+    aboutTitle: 'Software developer with a strong eye for UI details.',
     aboutTextOne:
       'I enjoy turning ideas into interfaces people actually use: product catalogs and checkout flows, data dashboards, booking forms and the admin tools behind them. Every project on this site is a working app, not a static mockup.',
     aboutTextTwo:
-      'With a bachelor’s degree in information systems and around three years of frontend experience, I take websites from the first layout to deployment: responsive UI, components, APIs, data, tests and release. I care about maintainable code, accessibility (WCAG), privacy and solid web security basics.',
+      'With a bachelor’s degree in information systems, I take websites from the first layout to deployment: responsive UI, components, APIs, data, tests and release. I care about maintainable code, accessibility (WCAG), privacy and solid web security basics.',
     educationLabel: 'Education',
     education: [
       {
@@ -85,7 +85,7 @@ const translations = {
     contactLabel: 'Contact',
     contactTitle: 'Let’s build something useful together.',
     contactText:
-      'I’m open to frontend developer roles and freelance projects in Berlin or remote.',
+      'I’m open to software developer roles and freelance projects in Berlin or remote.',
     writeToMe: 'Write to me',
   },
   DE: {
@@ -94,22 +94,22 @@ const translations = {
     navSkills: 'Kompetenzen',
     navContact: 'Kontakt',
     languageLabel: 'Sprache',
-    eyebrow: 'FRONTEND-ENTWICKLERIN • UI-ENTWICKLUNG • BERLIN',
-    heroTitle: 'Frontend-Entwicklerin für durchdachte Weboberflächen.',
+    eyebrow: 'SOFTWAREENTWICKLERIN • FRONTEND • BERLIN',
+    heroTitle: 'Softwareentwicklerin für durchdachte Weboberflächen.',
     heroText:
-      'Ich entwickle responsive, moderne Benutzeroberflächen mit React, Next.js und TypeScript, mit Liebe zum Detail und zu Animationen. Ich lebe in Berlin und suche eine Stelle als Frontend-Entwicklerin.',
+      'Ich entwickle responsive, moderne Benutzeroberflächen mit React, Next.js und TypeScript, mit Liebe zum Detail und zu Animationen. Ich lebe in Berlin und suche eine Stelle als Softwareentwicklerin.',
     viewProjects: 'Projekte ansehen',
     downloadCv: 'Lebenslauf herunterladen (PDF)',
     focus: 'Fokus',
-    focusStack: 'Jahre Erfahrung in der Frontend-Entwicklung mit React / Next.js, TypeScript und responsivem UI',
+    focusStack: 'React / Next.js, TypeScript und responsives UI',
     focusUi: 'klare Layouts, Animationen, barrierefreie Komponenten',
     focusBerlin: 'offen für Festanstellung und Freelance-Projekte',
     aboutLabel: 'Über mich',
-    aboutTitle: 'Frontend-Entwicklerin mit Blick fürs Detail.',
+    aboutTitle: 'Softwareentwicklerin mit Blick fürs Detail.',
     aboutTextOne:
       'Ich verwandle Ideen in Oberflächen, die Menschen wirklich nutzen: Produktkataloge und Checkouts, Daten-Dashboards, Buchungsformulare und die Admin-Tools dahinter. Jedes Projekt auf dieser Seite ist eine funktionierende Anwendung, kein statisches Mockup.',
     aboutTextTwo:
-      'Mit einem Bachelorabschluss in Informationssystemen und rund drei Jahren Erfahrung in der Frontend-Entwicklung begleite ich Websites vom ersten Layout bis zum Deployment: responsive Oberflächen, Komponenten, Schnittstellen, Daten, Tests und Veröffentlichung. Mir sind wartbarer Code, Barrierefreiheit (WCAG), Datenschutz und grundlegende Websicherheit wichtig.',
+      'Mit einem Bachelorabschluss in Informationssystemen begleite ich Websites vom ersten Layout bis zum Deployment: responsive Oberflächen, Komponenten, Schnittstellen, Daten, Tests und Veröffentlichung. Mir sind wartbarer Code, Barrierefreiheit (WCAG), Datenschutz und grundlegende Websicherheit wichtig.',
     educationLabel: 'Ausbildung',
     education: [
       {
@@ -168,7 +168,7 @@ const translations = {
     contactLabel: 'Kontakt',
     contactTitle: 'Lass uns gemeinsam etwas Nützliches bauen.',
     contactText:
-      'Ich bin offen für Stellen als Frontend-Entwicklerin und für Freelance-Projekte, in Berlin oder remote.',
+      'Ich bin offen für Stellen als Softwareentwicklerin und für Freelance-Projekte, in Berlin oder remote.',
     writeToMe: 'Schreib mir',
   },
 }
@@ -309,7 +309,7 @@ export default function HomePage({ language }: { language: Language }) {
               <p className="text-sm uppercase tracking-[0.35em] text-white/55">{copy.focus}</p>
               <div className="mt-6 space-y-6">
                 <div>
-                  <p className="text-4xl font-semibold">3+</p>
+                  <p className="text-4xl font-semibold">React</p>
                   <p className="mt-2 text-white/70">
                     {copy.focusStack}
                   </p>

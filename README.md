@@ -4,7 +4,7 @@
 
 ![Portfolio homepage](docs/home.jpg)
 
-Personal portfolio site for a Frontend Developer / UI Engineer based in Berlin. The homepage has About, Skills, Projects and Contact sections and links to three working demo apps.
+Personal portfolio site for a Software Developer based in Berlin. The homepage has About, Skills, Projects and Contact sections and links to three working demo apps.
 
 ## Features
 
