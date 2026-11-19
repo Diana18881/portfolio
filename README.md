@@ -4,7 +4,7 @@
 
 ![Portfolio homepage](docs/home.jpg)
 
-Personal portfolio site for a Software Developer based in Berlin. The homepage has About, Skills, Projects and Contact sections and links to three working demo apps.
+Personal portfolio site for a Full-Stack Developer based in Berlin. The homepage has Projects, About, Resume (experience, certificates, education, skills, languages) and Contact sections, an availability badge, a skip link and an accessibility statement (`/barrierefreiheit`). It links to three working demo apps and the LOGIPAY full-stack project.
 
 ## Features
 

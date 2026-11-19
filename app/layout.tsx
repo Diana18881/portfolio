@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://diana-portfolio-two-roan.vercel.app"),
   title: {
-    default: "Diana Tsymbaliuk | Software Developer",
+    default: "Diana Tsymbaliuk | Full-Stack Developer",
     template: "%s | Diana Tsymbaliuk",
   },
   description:
-    "Software developer portfolio with responsive UI, Next.js projects and e-commerce case studies.",
+    "Portfolio of Diana Tsymbaliuk, full-stack developer in Berlin: React, Next.js, TypeScript, Node.js and SQL, with working demo projects.",
   alternates: { canonical: "/", languages: { en: "/", de: "/de" } },
   openGraph: {
     type: "website",
